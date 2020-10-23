@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class="box">
+        <div class="form-group">
+            User Name:
+            <input type="text" class="form-control" [(ngModel)]="name">
+        </div>
+        <div class="form-group">
+            Price:
+            <input type="text" class="form-control" [(ngModel)]="price">
+        </div>
+        <div class="form-group">
+            Shipped to:
+            <select class="form-control" [(ngModel)]="city">
+                <option value="Hydarbad">Hydarbad</option>
+                <option value="Delhi">Delhi</option>
+            </select>
+        </div>
+        <div class="form-group">
+            MFD:
+            <input type="date" class="form-control" [(ngModel)]="mfd">
+        </div>
+        <div class="form-group">
+            Stock:
+            <input type="checkbox" class="" [(ngModel)]="isinStock">Yes
+        </div>
+    </div>
+    <div class="box">
+        <h2>Product Details</h2>
+        <dl>
+            <dt>Name :</dt>
+            <dd>{{name}}</dd>
+            <dt>Price :</dt>
+            <dd>{{price}}</dd>
+            <dt>Shipped to :</dt>
+            <dd>{{city}}</dd>
+            <dt>MFD :</dt>
+            <dd>{{mfd}}</dd>
+            <dt>Stock :</dt>
+            <dd>{{(isinStock==true)?"Available":"Not available"}}</dd>
+        </dl>
+    </div>
+</div>

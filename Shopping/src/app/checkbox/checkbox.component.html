@@ -1,0 +1,28 @@
+<fieldset>
+    <legend> Product catlog</legend>
+    <div (change)= 'f1()'>
+        <input type="checkbox"  name="A" value="All" [(ngModel)]="filterText" >All
+        <input type="checkbox"  name="E" value="Electronics" [(ngModel)]="filterTextE">Electronics
+        <input type="checkbox"  name="S" value="Shoes" [(ngModel)]="filterTextS">Shoe
+        <input type="checkbox"  name="C" value="Cloths" [(ngModel)]="filterTextC">Cloths
+    </div>
+    </fieldset>
+<div>
+        <table class="table table-hover">
+            <thead>
+                <th>Id.</th>
+                <th>Name</th>
+                <th>Category</th>
+            </thead>
+            <tbody>
+                <tr *ngFor= 'let item of products'>
+                <!-- <ng-container *ngIf= 'item.category==filterText'> -->
+                    <ng-container *ngIf= "item.category == filterText || item.category == filterTextE || item.category == filterTextS || item.category == filterTextC">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.category}}</td>
+                    </ng-container>
+                </tr>
+            </tbody>
+        </table>
+</div>

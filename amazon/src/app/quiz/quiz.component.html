@@ -1,0 +1,19 @@
+<div class= "container">
+    <div>
+        <h2 class= "bg-danger" style="text-align: center">Welcome to Quize</h2>
+    </div>
+    <!-- <div>
+       <p><span>{{item.Q}}</span></p>
+      <p> <span>{{item.answers.a}}</span> <span>{{item.answers.b}}</span> <span>{{item.answers.c}}</span></p>
+    </div> -->
+
+    <p>{{sets1 | json}}</p>
+    <input type="radio" name="op" value="a">{{sets1.a}}
+    <input type="radio" name="op" value="b">{{sets1.b}}
+    <input type="radio" name="op" value="c">{{sets1.c}}
+    
+    
+    <button (click)="prevButton()">Prev</button>
+    <button (click)="nextButton()">Next</button>
+
+</div>

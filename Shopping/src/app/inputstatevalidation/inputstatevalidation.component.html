@@ -1,0 +1,52 @@
+<div class= 'container'>
+    <h3>Input State Validaton</h3>
+    <div >
+        <form #formReg= "ngForm" name="formReg">
+            <div class= "form-group">
+                <label>Name:</label>
+            <input [ngClass]="{errorStyle:txtName.invalid,validStyle:txtName.valid }" type="text" name="txtName" #txtName= "ngModel" ngModel class=" form-control" pattern= "[A-Z]{4,8}" required>
+            <div class= "text-danger" *ngIf= "txtName.invalid && txtName.touched" >
+                <span *ngIf="txtName.errors.required">User Name Required</span>
+                <span *ngIf="txtName.errors.pattern">Need 4-8 Block Letters</span>
+            </div>
+            </div>
+            
+            <div class= "form-group">
+                 <label>Sencond Name:</label>
+                 <input [ngClass]="{errorStyle:txtName2.invalid,validStyle:txtName2.valid }" type="text" name="txtName2" #txtName2= "ngModel" ngModel class=" form-control" pattern= "(?=.*[A-Z])\w{4,8}" required>
+                 <div class= "text-danger" *ngIf= "txtName2.invalid && txtName2.touched" >
+                    <span *ngIf="txtName2.errors.required">User Name Required</span>
+                    <span *ngIf="txtName2.errors.pattern">Atleast Enter One Block Letter</span>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+          

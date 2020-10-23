@@ -1,0 +1,25 @@
+<div class= "container">
+    <app-com1filter [allCount]='pAllCount' [electronicsCount]='pElectronicsCount' [clothsCount]='pClothsCount'
+    (filterEvent)='bindFun($event)'></app-com1filter>
+    <div class= "form-group">
+        <fieldset>
+            <legend>Products List</legend>
+            <table class= "table table-hoverm">
+                <thead>
+                    <th>NAME</th>
+                    <th>PRICE</th>
+                    <th>CATEGORY</th>
+                </thead>
+                <tbody>
+                   <ng-container *ngFor='let item of products'>
+                       <tr *ngIf="selectCategory=='All'||selectCategory==item.category">
+                           <td>{{item.name}}</td>
+                           <td>{{item.price}}</td>
+                           <td>{{item.category}}</td>
+                       </tr>
+                   </ng-container>
+                </tbody>
+            </table>
+        </fieldset>
+    </div>
+</div>

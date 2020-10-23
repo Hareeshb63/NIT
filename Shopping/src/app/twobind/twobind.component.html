@@ -1,0 +1,47 @@
+<div class="container-fluid">
+    <div class="box">
+        <h3>Product Details</h3>
+        <div class="form-group">
+            Name:
+            <input type="text" class="form-control" [(ngModel)]= 'name'>
+        </div>
+        <div class="form-group">
+            Price:
+            <input type="text" class="form-control" [(ngModel)]= 'price'>
+        </div>
+        <div class= "form-group">
+            Shipped To:
+            <select class="form-control" [(ngModel)]='city'>
+                
+                <option value="HYD">Hyd</option>
+                <option value="BNG">bng</option>
+            </select>
+        </div>
+        <div class= "form-group">
+            Manufactured Date:
+            <input type="date" class= "form-control" [(ngModel)] ='mfd'>
+        </div>
+        <div>
+            Stock Status:
+            <input type="checkbox" [(ngModel)]= 'isinstock'>Yes
+        </div>
+    </div>
+    <div class="box">
+        <h3>Product List</h3>
+        <div class="form-group">
+            <dl>
+                <dt>Name:</dt>
+                <dd>{{name}}</dd>
+                <dt>Price:</dt>
+                <dd>{{price}}</dd>
+                <dt>Shipped To:</dt>
+                <dd>{{city}}</dd>
+                <dt>Mfd:</dt>
+                <dd>{{mfd}}</dd>
+                <dt>Stock Status:</dt>
+                <dd>{{(isinstock==true)?"Available":"Out of Stock"}}</dd>
+            </dl>
+
+        </div>
+    </div>
+</div>

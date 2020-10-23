@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+        <div [ngStyle]='styleObj' style="background-color: red;" id="red" (mouseover)="colorChange($event)">.</div>
+        <div [ngStyle]='styleObj' style="background-color:yellow;" id="yellow" (mouseover)="colorChange($event)">.</div>
+        <div [ngStyle]='styleObj' style="background-color:blue;" id="blue" (mouseover)="colorChange($event)">.</div>
+    </div>
+    <br>
+    <h3 [ngClass]="textColor">Select a Color({{colorO}})</h3> 
+
+</div>
+
+
+    

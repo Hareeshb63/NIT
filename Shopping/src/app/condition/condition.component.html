@@ -1,0 +1,30 @@
+<div class= "container">
+    <fieldset>
+        <legend>Categories</legend>
+        <input type="radio" name="cat" value='All' [(ngModel)]='filterText'>All
+        <input type="radio" name="cat" value='Electronics' [(ngModel)]='filterText' >Electronics
+        <input type="radio" name="cat" value='Cloths' [(ngModel)]='filterText'>Cloths
+    </fieldset>
+
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <th>Id.</th>
+                <th>Name</th>
+                <th>Category</th>
+            </thead>
+            <tbody>
+                <tr *ngFor= 'let item of products'>
+                <!-- <ng-container *ngIf= 'item.category==filterText'> -->
+                    <ng-container *ngIf= "filterText=='All'|| item.category == filterText">
+                        <td>{{item.id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.category}}</td>
+                </ng-container>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>

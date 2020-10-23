@@ -1,0 +1,26 @@
+<div>
+    <img src="assets/flipkartlogo" alt="fk">
+    <h1>Flipkart</h1>
+</div>
+<div>
+    <form [formGroup]="myform">
+        <div class="form-group">
+            <label>Enter Text</label>
+            <!-- (onSelectionChanged)="onSelectionChanged($event)" -->
+            <quill-editor [ngStyle]="mystyle" formControlName="txt" [modules]="config" (onContentChanged)="textChanged($event)">
+
+            </quill-editor>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary">Submit</button>
+        </div>
+
+    </form>
+</div>
+<div>
+    <!-- display entered text without tags -->
+    <p [innerHTML]="txt"></p>
+
+    <!-- display entered text with tags -->
+    <p>{{txt}}</p>
+</div>

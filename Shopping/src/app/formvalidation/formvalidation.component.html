@@ -1,0 +1,48 @@
+<div class= "container">
+    
+        <form #frmReg='ngForm'>
+            <div class= "form-group">
+                <label>Name:</label>
+                <input type="text" name="txtName" #txtName= 'ngModel' ngModel class= "form-control" required>
+            </div>
+
+            <div class= "form-group">
+                <label>Phone Number:</label>
+                <input type="text" name="txtNum" #txtNum= 'ngModel' ngModel class= "form-control" required>
+            </div>
+
+            <div class= "form-group">
+                <label>Email:</label>
+                <input type="email" name="txtEmail" #txtEmail= 'ngModel' ngModel class= "form-control" required>
+            </div>
+            <div>
+                <button class= "btn btn-primary" [disabled]=frmReg.invalid >Submit</button>
+                <button class= "btn btn-success" [disabled]=frmReg.pristine>Save</button>
+            </div>
+        </form>
+        <div>
+            <table Class= "table table-hover">
+                <tr>
+                    <td>Pristine</td>
+                    <td>{{frmReg.pristine}}</td>
+                </tr>
+                <tr>
+                    <td>dirty</td>
+                    <td>{{frmReg.dirty}}</td>
+                </tr>
+                <tr>
+                    <td>valid</td>
+                    <td>{{frmReg.valid}}</td>
+                </tr>
+                <tr>
+                    <td>Invalid</td>
+                    <td>{{frmReg.invalid}}</td>
+                </tr>
+                <tr>
+                    
+                </tr>
+            </table>
+       
+        </div>
+        
+</div>

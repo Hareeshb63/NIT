@@ -1,0 +1,20 @@
+<div class= "container">
+    <form #frmReg= 'ngForm' ngModel>
+        <div class= "form-group">
+            <label>Select Country:</label>
+            <span><img [src]="flag" height="30px" width="30px"></span>
+            <select class= "form-control" name="selCountry" #selCountry='ngModel' ngModel (change)=selectCountry(selCountry.value)>
+                <option value="nocountry">--Select Country--</option>
+                <option value="India">India</option>
+                <option value="UK">UK</option>
+                <option value="US">France</option>
+            </select>
+        </div>
+        <div class= "form-group">
+            <label>Mobile Number:</label>
+            <input class= "form-control" type="text" name="txtNum" #txtNum= 'ngModel' ngModel placeholder={{tip}} required>
+            <span class= "text-danger" *ngIf= "vfyNum">Invalid Mobile- {{tip}}</span>
+        </div>
+        <button class= "btn btn-primary" (click)= "numVerify(txtNum.value)">Sumbit</button>
+    </form>
+</div>

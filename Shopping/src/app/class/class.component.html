@@ -1,0 +1,20 @@
+<div class= "container">
+    <fieldset>
+        <legend>class Binding</legend>
+        <input type="text" [(ngModel)]="effects">
+    </fieldset>
+        <div [ngClass]="effects">
+            Angular Class bind
+        </div>
+    <fieldset>
+        <ul>
+            <li><input type="checkbox" [(ngModel)]='textEffect'></li>
+            <li><input type="checkbox" [(ngModel)]='borderEffect'></li>
+            <li><input type="checkbox" [(ngModel)]='boxEffect'></li>
+        </ul>
+    </fieldset>
+        <div [ngClass]="{'textstyle':textEffect,'boxstyle':boxEffect, 'borderstyle':borderEffect}">
+            Angular Class Binding
+        </div>
+</div>
+

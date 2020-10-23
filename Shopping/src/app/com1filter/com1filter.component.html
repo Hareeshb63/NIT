@@ -1,0 +1,8 @@
+<div class="form-group">
+    <fieldset>
+        <legend>Filter Produts</legend>
+        <input type="radio" name="filter" value="All" [(ngModel)]=selectedType (change)=onRadioChange()> <span>All({{allCount}})</span>
+        <input type="radio" name="filter" value="Electronics" [(ngModel)]=selectedType (change)=onRadioChange()> <span>Electronics({{electronicsCount}})</span>
+        <input type="radio" name="filter" value="Cloths" [(ngModel)]=selectedType (change)=onRadioChange()> <span>Cloths({{clothsCount}})</span>
+    </fieldset>
+</div>

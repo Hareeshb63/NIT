@@ -1,0 +1,25 @@
+<p>Exporting an excel file of type .xslx !!!</p>
+<p>Export as XLSX by clicking the below button</p>
+
+<button (click)="exportAsXLSX()">Export</button>
+<!-- <button (click)="generatePdf()">Download</button> -->
+
+<table class="table table-hover">
+  <tr>
+    <td>TraineeName</td>
+    <td>Functionname</td>
+    <td>status</td>
+    <td>score</td>
+  </tr>
+  <tr *ngFor="let item of data.reportdetail">
+    <td>{{item.TraineeName}}</td>
+    <td>{{item.Functionname}}</td>
+    <td>{{(item.status==null)?"Not-Available":item.status}}</td>
+    <td>{{item.score}}</td> 
+  </tr>
+</table>
+
+<!-- <button (click)="createPdf()">Create PDF</button>
+<button (click)="convert()">Create PDF convert</button> -->
+<button (click)="convert1()">PDF convert1</button>
+<button (click)="createPdf1()">PDF createPdf1</button>

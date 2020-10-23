@@ -1,0 +1,68 @@
+<div class= "container-fluid">
+    <div class= "box">
+        <img src="assets/movie/bookmy.png" alt="bookmyshow" width="100%" height="90px">
+        <div class= "form-group">
+            <h3>Movie Ticket Booking</h3>
+            <label>Cities:</label>
+            <select (change)='selectedCityChange()' [(ngModel)]='selectedCity' class= 'form-control'>
+                    <option *ngFor='let item of cities'>{{item}}</option>
+            </select>
+        </div>
+        <div class= "form-group">
+            <label>Area:</label>
+            <select (change)='selectedAreaChange()' [(ngModel)]='selectedArea'  class= "form-control">
+                <option *ngFor='let item of areas'>{{item}}</option>
+            </select>
+        </div>
+        <div class= "form-group">
+            <label>Movies:</label>
+            <select (change)='selectedMovieChange()' [(ngModel)]='selectedMovie'  class= "form-control">
+                <option *ngFor='let item of movies'>{{item}}</option>
+            </select>
+        </div>
+    
+        <div class= "form-group">
+            <label>Date:</label>
+            <input type="date" [(ngModel)]='selectedDate' class= "form-control" [disabled]='visible'>
+        </div>
+    
+        <div class= "form-group">
+            <label>Choose Class:</label><br>
+            <input type="radio" value="Normal" name="sclass" [(ngModel)]='selectedClass'>Normal
+            <input type="radio" value="Silver" name="sclass" [(ngModel)]='selectedClass'>Silver
+            <input type="radio" value="Gold" name="sclass" [(ngModel)]='selectedClass'>Gold
+        </div>
+    
+        <div class= "form-group">
+            <label>Choose Seats</label>
+            <input type="number" min="1" max="5" class= "form-control" [(ngModel)]='selectedSeat'>
+        </div>
+    
+        <div class= "form-group text-center">
+            <button (click)='bookTicket()' class= "btn btn-success">Book Ticket</button>
+        </div>
+    </div>
+
+    <!--Booking Summary  -->
+    <div *ngIf='bookClick==true'>
+        <div class= 'box'>
+            <h3 class="text-success">Booking Summary</h3>
+        <div class= "card-deck">
+                <div class="card text-center">
+                <div class= "card-body">
+                    <img [src]="photo" width="250px" height="250px">
+                </div>
+                <div class= "card-footer text-left">
+                    <p><b>Movie: </b> {{movie}}</p>
+                    <p><b>City: </b> {{city}}</p>
+                    <p><b>Area: </b> {{area}}</p>
+                    <p><b>Class: </b> {{sclass}}</p>
+                    <p><b>Date: </b> {{date}}</p>
+                    <p><b>Total Seats: </b> {{seat}}</p>
+                    <h3>Total Amount: &#8377; {{price}}</h3>
+                </div>
+            </div>
+        </div>   
+        </div>
+    </div>
+</div>

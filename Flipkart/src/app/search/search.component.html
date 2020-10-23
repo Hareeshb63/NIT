@@ -1,0 +1,16 @@
+
+<div class= "container">
+     <table class= "table table-hover">
+        <thead>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category</th>
+        </thead>
+        <tbody>
+            <tr *ngFor= "let item of filterProduct">
+                  <td>{{item.name}}</td>
+                  <td>{{item.price}}</td>
+                  <td>{{item.category}}</td>
+        </tbody>
+     </table>
+</div>

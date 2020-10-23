@@ -1,0 +1,32 @@
+<div class= "container">
+    <h3>Register User</h3>
+    <form #frmReg= 'ngForm'>
+        <label>Email:</label>
+        <div class ="form-group">
+            <input type="text" name="txtEmail" #txtEmail= 'ngModel' ngModel (blur)="verifyEmail(txtEmail.value)" class= "form-control">
+            <span class= "text-danger" *ngIf='errorEmail'>Enter Valid Email</span>
+        </div>
+
+        <label>City</label>
+        <div class= "form-group">
+            <select name= 'selCity' #selCity= "ngModel" ngModel (change)="verifyCity(selCity.value)" class= "form-control">
+                <option value="nocity">--Select City--</option>
+                <option value="Banglore">Banglore</option>
+                <option value="Pune">Pune</option>
+                <option value="Dehli">Dehli</option>
+            </select>
+            <span class= "text-danger" *ngIf='errorCity'>Please Select a city</span>
+        </div>
+
+        <label>Enter Even Number</label>
+        <div class= "form-group">
+            <input type="text" name="txtEven" #txtEven= "ngModel" ngModel (blur)="verifyEven(txtEven.value)" class= "form-control">
+            <span class= "text-danger" *ngIf='errorEven'>Enter Even Number</span>
+        </div>
+        <div class= "form-group">
+            <label> Enter Mobile Number <input type="checkbox" name="checktype" #checktype= "ngModel" ngModel>[Optional]</label>
+            <input class= "form-control" type="text" name="txtMobile" #txtMobile="ngModel" ngModel [required]= '!checktype.value'>
+            <span class= "text-danger" *ngIf='txtMobile.invalid'>Mobile Num is required</span>
+        </div>
+    </form>
+</div>

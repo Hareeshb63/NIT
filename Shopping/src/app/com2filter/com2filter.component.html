@@ -1,0 +1,13 @@
+<div class= "container">
+    <div class="form-group">
+        <fieldset>
+            <legend>Select Product</legend>
+            <select class="form-control" (change)='Onchange()' [(ngModel)]= 'selectProduct'>
+                <option value="All" >All({{allCount}})</option>
+                <option value="Electronics">Electronics({{electronicsCount}})</option>
+                <option value="Cloths">Cloths({{clothsCount}})</option>
+                <option value="Shoes">Shoes({{shoesCount}})</option>
+            </select>
+        </fieldset>
+    </div>
+</div>

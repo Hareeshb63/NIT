@@ -1,0 +1,36 @@
+<div class= "container">
+    <form [formGroup]='frmRegister'>
+        <dl>
+            <dt>NAME</dt>
+            <dd><input type="text" formControlName='name' required></dd>
+            <span *ngIf= "frmRegister.get('name').invalid">Name Requires</span>
+            <dt>PRICE</dt>
+            <dd><input type="text" formControlName='price'></dd>
+        </dl>
+        <div formGroupName= 'frmDetails'>
+            <dl>
+                <dt>CITY</dt>
+                <dd>
+                    <select formControlName= 'city'>
+                        <option value="Hyd">Hyd</option>
+                        <option value="Atn">Atn</option>
+                    </select>
+                </dd>
+                <dt>IS IN STOCK</dt>
+                <dd><input type="checkbox" formControlName= 'isinstock'></dd>
+            </dl>
+        </div>
+    </form>
+
+    PRODUCT DETAILS:
+    <dl>
+        <dt>Name</dt>
+        <dd>{{frmRegister.value.name}}</dd>
+        <dt>Price</dt>
+        <dd>{{frmRegister.value.price}}</dd>
+        <dt>City</dt>
+        <dd>{{frmRegister.value.frmDetails.city}}</dd>
+        <dt>Is In Stock</dt>
+        <dd>{{frmRegister.value.frmDetails.isinstock}}</dd>
+    </dl>
+</div>

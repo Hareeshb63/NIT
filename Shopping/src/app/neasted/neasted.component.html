@@ -1,0 +1,13 @@
+<div>
+    <h2>Product Details</h2>
+    <ol>
+        <li *ngFor='let item of menu'>
+            {{item.category}}
+            <ul>
+                <li *ngFor= 'let x of item.products'>
+                    {{x}}
+                </li>
+            </ul>
+        </li>
+    </ol>
+</div>

@@ -1,0 +1,25 @@
+<form action="">
+    <fieldset class= "border padding-fieldset">
+        <div *ngFor="let item of nav; let j=index" style="display: inline;">
+            <span class= "badge badge-light p-2 mr-3 " [ngClass]="item.style">{{item.product}}</span>
+        </div>
+        <!-- <span class= "badge badge-light p-2" [ngClass]="styles[s]"> Poultry</span>
+        <span class= "badge badge-light ml-3 p-2" [ngClass]="styles[s]"> Bouillon</span>
+        <span class= "badge badge-light ml-3 p-2" [ngClass]="styles[s]">Consomme</span>
+        <span class= "badge badge-light ml-3 p-2 " [ngClass]="styles[s]"> Beef</span>
+        <span class= "badge badge-light border ml-3 p-2" [ngClass]="styles[s]"> Hen</span> -->
+    </fieldset>
+    <div class= padding-fieldset>
+        <p> Is your product made from {{msg}}?</p>
+        <div class= "d-flex justify-content-end">
+            <button type="button" class= "btn btn-success" id= "Yes-button" (click)="onYes()">Yes</button>
+            <button type="button" class= "btn btn-danger"  id= "No-button" (click)="onNo()">No</button>
+        </div>
+    </div>
+    <div class= padding-fieldset>
+        <div class= "d-flex">
+            <button type="button" class= "btn btn-info" [disabled]='disBack' (click)="onBack()">{{btn}}</button>
+            <button type="button" class= "btn btn-info" [disabled]='disNext' (click)="onNext()">Next</button>
+        </div>
+    </div>
+</form>

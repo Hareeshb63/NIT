@@ -1,0 +1,5 @@
+<div class= "container-fluid">
+    <marquee (mouseover)='onMouseOver($event)' (mouseout)='onMouseOut($event)'>
+        <img [src]="item" *ngFor='let item of photos' >
+    </marquee>
+</div>

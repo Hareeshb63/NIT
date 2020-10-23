@@ -1,0 +1,19 @@
+<div class= "container box">
+    <h4>Product List</h4>
+    <button class ="btn btn-primary" (click)='addProduct()'>Add Product</button>
+    <div>
+        <table class= "table table-hover">
+            <thead>
+                <th>Id.</th>
+                <th>Name</th>
+            </thead>
+            <tbody>
+                <tr *ngFor='let item of products;trackBy:trackChange'>
+                    <td>{{item.id}}</td>
+                    <td>{{item.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

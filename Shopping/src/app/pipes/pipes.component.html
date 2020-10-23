@@ -1,0 +1,58 @@
+<p>1]{{msg | uppercase}}</p>
+<p>2]{{msg | lowercase}}</p> 
+<p>3]{{msg | titlecase}}</p>
+
+<p>4]{{price | number}}</p>
+<p>5]{{price | number:'4.2-2'}}</p>
+<p>6]{{price | number:'5.4-4'}}</p><br>
+
+<p>7]{{price2 | number}}</p>
+<p>8]{{price2 | number:'3.4-4'}}</p><br>
+
+<p>9]{{price | currency}}</p>
+<p>10]{{price | currency:'INR'}}</p>
+<p>11]{{price | currency:'INR':'&#8377;':'4.3-3'}}</p>
+<p>12]{{price | currency:'CAD'}}</p>
+<p>13]{{price | currency:'CAD':'symbol-narrow'}}</p><br>
+
+<p>14]{{dates | date}}</p>
+<p>15]{{dates | date:'short'}}</p>
+<p>16]{{dates | date:'shortTime'}}</p>
+<p>17]{{dates | date:'fullTime'}}</p>
+<p>18]{{dates | date:'medium'}}</p>
+<p>19]{{dates | date:'long'}}</p>
+<p>20]{{dates | date:'full'}}</p>
+<p>21]{{dates | date:'d-M-yy'}}
+<p>22]{{dates | date:'dd-MM-yyyy'}}</p>
+<p>23]{{dates | date:'dd-MMM-yyyy'}}</p>
+<p>24]{{dates | date:'dd/MMMM/yyy'}}</p>
+<p>25]{{dates | date:'dd/MMMM/yyyy'}}</p><br>
+
+<p>26]{{price2 | percent}}</p>
+<p>27]{{price2 | percent:'2.2-3'}}</p><br>
+
+<h5>28]{{data}}</h5>
+<pre>
+<h5>29]{{data | json}}</h5>
+</pre>
+
+
+<div>
+    <table class="table">
+        <thead>
+            <th>NAME</th>
+            <th>DESIGNATION</th>
+            <th>MESSAGE</th>
+        </thead>
+        <tbody>
+            <tr *ngFor= 'let emp of employees'>
+                <td>{{emp.name}}</td>
+                <td>{{emp.designation}}</td>
+                <td>{{emp.designation | i18nSelect:inviteMeeting}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h6>30] {{msg | sentencecase}}</h6>
+

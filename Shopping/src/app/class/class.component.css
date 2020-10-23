@@ -1,0 +1,12 @@
+.borderstyle{
+    border:2px solid darkslategray;
+}
+.boxstyle{
+    box-shadow: 0 3px 5px;
+}
+.textstyle{
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    color:green;
+}

@@ -1,0 +1,23 @@
+<div class= "container">
+    <app-co1filter [allCount]= 'pAllCount' [electronicsCount]= 'pElectronicsCount' [clothsCount]='pClothsCount'
+                    (filterSelectionChange)="filterName($event)"></app-co1filter>
+    <fieldset>
+        <legend>Products List</legend>
+        <table class= "table table-hover">
+            <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Category</th>
+            </thead>
+            <tbody>
+                  <ng-container *ngFor= 'let item of products'>
+                    <tr *ngIf="selectedCategory=='All'|| selectedCategory== item.category">
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.category}}</td>
+                   </tr>
+                  </ng-container>
+            </tbody>
+        </table>
+    </fieldset>
+</div>

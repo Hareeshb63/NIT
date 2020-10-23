@@ -1,0 +1,19 @@
+<div class="container">
+    <div class= "form-group box">
+        <div class= "card">
+            <div class= "card-header">
+                <h3>{{product.name}}</h3>
+                <p>{{product.price}}</p>
+                <button class= "btn btn-primary" (click)="displayClick()">{{btntext}} Preview</button>
+
+            </div>
+            <div class= "card-body" *ngIf='isvisible'>
+                  <img [src]='product.photo' height="200" width="200">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

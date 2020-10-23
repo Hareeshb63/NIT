@@ -1,0 +1,63 @@
+<div>
+
+  <div>
+    <select (change)="selectFunction($event)">
+      <option *ngFor="let item of managments; let i = index">{{item.name}}</option>
+
+    </select>
+  </div>
+
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of selected; let i = index">
+          <td>{{item.name}}</td>
+          <td><button><a href="{{item.pdf}}">Download</a></button></td>
+          <td><button (click)="open(content)">Preview</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ng -->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">{{selected[0].name}}</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form>
+        <div class="form-group">
+          <div class="input-group">
+             <iframe [src]= "path | safe" type="application/pdf" height="300px" width="100%"></iframe> 
+          </div>
+        </div>
+      </form>
+    </div>
+  </ng-template>
+  <br>
+
+
+  <!-- <div>
+    <button class="btn btn-primary" (click)="showFunction()">Functions</button>
+  </div> -->
+  <!-- <div *ngIf="showFun">
+    <div>
+      <dl class="box" *ngFor="let item of managments.slice(0,4); let i = index">
+        <a data-toggle="modal" data-target="#myModal" (click)="selectedMgnt(i)" href="#">{{item.name}}</a>
+      </dl>
+
+      <dl class="box" *ngFor="let item of managments.slice(4,8); let i = index">
+        <a data-toggle="modal" data-target="#myModal" (click)="selectedMgnt(i)" href="#">{{item.name}}</a>
+      </dl>
+    </div>
+  </div> -->
+</div>

@@ -1,0 +1,22 @@
+<div>
+    <div class="row pt-5">
+        <div class="col-md-6 mx-auto">
+            <div class= "card rounded-0">
+                <div class="card-header ">
+                    <h3 class="mb-0">Register</h3>
+                    <div class="card-body">
+                        <form  class="form"></form>
+                        <div class="form-group">
+                            <label for="">Email</label>
+                            <input type="text" [(ngModel)]= "regUserdata.email" name="email" class="form-control" required >
+                            <label for="">Password</label>
+                            <input type="password" [(ngModel)]= "regUserdata.password" name="password" class="form-control" required >
+                            
+                        </div>
+                        <button type="botton" (click)="regUser()" class="btn btn-primary">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

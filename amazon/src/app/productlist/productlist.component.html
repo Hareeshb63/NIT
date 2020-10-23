@@ -1,0 +1,11 @@
+<div>
+    <ol>
+        <li *ngFor= 'let item of products'>
+            <button class= "btn btn-link" (click)="productSelect(item)">{{item.name}}</button></li>
+    </ol>
+</div>
+
+<h4>Details</h4>
+<div>
+    <router-outlet></router-outlet>
+</div>

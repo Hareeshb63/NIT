@@ -1,0 +1,12 @@
+<div class= "contsiner">
+    <div>
+        <input type="text" *ngIf= "userName=='' ; then loginTemplate else welcomeTemplate">
+    </div>
+    <ng-template #loginTemplate>
+        User Name:
+        <input type="text" [(ngModel)]= 'userName'>
+    </ng-template>
+    <ng-template #welcomeTemplate>
+        Hello!! {{userName}}
+    </ng-template>
+</div>

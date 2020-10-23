@@ -1,0 +1,13 @@
+<div class="container">
+    x position :{{xPosition}}
+    y position :{{yPosition}}
+
+    x posNew :{{xPosNew}}
+    y posNew :{{yPosNew}}
+    <div height="500px" width="500px">
+        
+    </div>
+    <img [ngStyle]= 'objStyle' src="assets/burger.jpg" height="100px" width="100px" draggable="true"
+                     (mousedown)="onmouseDown($event)" (mouseup)="onmouseUp($event)" >
+                    
+</div>

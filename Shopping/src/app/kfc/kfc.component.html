@@ -1,0 +1,129 @@
+<div class="container-fluid">
+    <div class= "form-group">
+        <img src="assets/kfc.jpg" alt="kfcBar" width="100%" height="200">
+    </div>
+    <div class= "form-group">
+        <div class= "btn btn-tool bg-info">
+            <div class= "btn-group">
+                <button class= "btn btn-info" value="info" (click)="selectedWizardStep($event)"> Customer Info</button>
+                <button class= "btn btn-info" value="meal" (click)="selectedWizardStep($event)"> Meal</button>
+                <button class= "btn btn-info" value="adon" (click)="selectedWizardStep($event)"> Ad-ON</button>
+                <button class= "btn btn-info" value="summary" (click)="selectedWizardStep($event)"> Summary</button>
+            </div>
+        </div>
+    </div>
+    <div [ngSwitch]="selectedStep">
+        <!--info-->
+        <div *ngSwitchCase="'info'">
+            <label>Customer Info</label>
+            <div class= "form-group">
+                <label>Name:</label>
+                <input type="text" [(ngModel)]='userName' class= "form-control">
+                <label> Number:</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group text-center">
+                <button class= "btn btn-primary" (click)="selectedStep='meal'"> Select Meal</button>
+            </div>
+        </div>
+    
+
+    <!--Meal -->
+    <div class= "form-group" *ngSwitchCase="'meal'">
+        <label>Select Meal</label>
+        <div class= "card-deck">
+            <div class="card text-center">
+                <div class= "card-header">
+                    <h4>Burger</h4>
+                </div>
+                <div class= "card-body">
+                    <img src="assets/burger.jpg" alt="burger">
+                </div>
+                <div class= "card-footer">
+                    <h5><input type="radio" value="burger" name="meal" [(ngModel)]="mealName">&#8377; 100/-</h5>
+                </div>
+            </div>
+                <div class="card text-center">
+                    <div class= "card-header">
+                        <h4>Roller</h4>
+                    </div>
+                    <div class= "card-body">
+                        <img src="assets/roller.jpg" alt="roller">
+                    </div>
+                    <div class= "card-footer">
+                        <h5><input type="radio" value="roller" name="meal" [(ngModel)]="mealName">&#8377;50/-</h5>
+                    </div>
+                   
+                </div>
+            </div>
+            <div class= "form-group text-center">
+                <button class= "btn btn-primary btn-block" (click)='selectedStep="adon"'>Choose Ad-ON</button>
+            </div>
+        </div>
+
+    
+    <!-- Ad ON -->
+
+    <div class= "form-group" *ngSwitchCase="'adon'">
+        <label>Select Ad-ON</label>
+        <div class="card-deck">
+            <div class="card text-center">
+                <div class= "card-header">
+                    <h4>Hot Wings</h4>
+                </div>
+                <div class= "card-body">
+                    <img src="assets/hotwing.jpg" alt="hotwing">
+                </div>
+                <div class= "card-footer">
+                    <h5><input type="checkbox" value="hotwing" [(ngModel)]="adonWings">&#8377; 99/-</h5>
+                </div>
+            </div>
+            <div class="card text-center">
+                <div class= "card-header">
+                    <h4>Krusher</h4>
+                </div>
+                <div class= "card-body">
+                    <img src="assets/krusher.png" alt="krusher">
+                </div>
+                <div class= "card-footer">
+                    <h5><input type="checkbox" value="hotwing" [(ngModel)]="adonKrusher">&#8377; 149/-</h5>
+                </div>
+            </div>
+        </div>
+        <div class= "form-group text-center" >
+            <button class= "btn btn-primary btn-block" (click)='billSummary()'>Bill Summary</button>
+        </div>
+
+    </div>
+
+    <!-- Summary -->
+   <div class="form-group" *ngSwitchCase="'summary'">
+       <label> Bill Summary</label>
+       <table class= "table table-hover">
+            <colgroup span="1" class= "bg-warning text-black"></colgroup>
+            <tr>
+                <td>Name:</td>
+                <td>{{userName}}</td>
+            </tr>
+                <tr>
+                    <td>Meal</td>
+                    <td>{{mealName}}</td>
+                </tr>
+                <tr>
+                    <td>Ad-ON</td>
+                    <td [innerHtml]="adonName"></td>
+                </tr>
+            <tr>
+                <td>Total Amount:</td>
+                <td>{{totalAmount}}</td>
+            </tr>
+        </table>
+    </div>
+   </div>
+</div>
+
+
+
+
+
+

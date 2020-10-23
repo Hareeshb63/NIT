@@ -1,0 +1,34 @@
+.container{
+    width: 600px;
+    padding:20px;
+    margin: auto;
+    border:2px solid lightseagreen;
+    box-shadow: 0 5px 6px;
+}
+
+input[type='text']:valid{
+    box-shadow: 0 2px green;
+    border: 2px solid green;
+}
+
+input[type='text']:invalid{
+    box-shadow: 0 2px red;
+    border: 2px solid red;
+}
+.strong{
+    border: 2px solid green;
+    box-shadow: 0 2px green ;
+}
+
+.weak{
+    border: 2px solid red;
+    box-shadow: 0 2px red ;
+}
+
+.poor{
+    border: 2px solid yellow;
+    box-shadow: 0 2px yellow ;
+}
+input[type='checkbox']:checked~span{
+    color:green;
+}

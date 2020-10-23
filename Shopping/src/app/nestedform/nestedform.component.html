@@ -1,0 +1,38 @@
+<div class="container">
+    <h3>Parent Form</h3>
+    <form [formGroup]="frmRegister">
+        <dl>
+            <dt>Name</dt>
+            <dd><input type="text" formControlName='name'></dd>
+            <dt>Price</dt>
+            <dd><input type="text" formControlName='price'></dd>
+        </dl>
+        <h3>Child Form</h3>
+        <div formGroupName='frmDetails'>
+            <dl>
+                <dt>City</dt>
+                <dd>
+                    <select formControlName='city'>
+                        <option value="banglore">Banglore</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Hyd">Hyd</option>
+                    </select>
+                </dd>
+                <dt>Is In Stock</dt>
+                <dd><input type="Checkbox" formControlName='isinstock'></dd>
+            </dl>
+            <button class= "btn btn-primary" (click)= "updateClick()">Update NestedForm</button>
+        </div>
+    </form>
+
+    <dl>
+        <dt>Name:</dt>
+        <dd>{{frmRegister.value.name}}</dd>
+        <dt>Price:</dt>
+        <dd>{{frmRegister.value.price}}</dd>
+        <dt>City:</dt>
+        <dd>{{frmRegister.value.frmDetails.city}}</dd>
+        <dt>IsInStock</dt>
+        <dd>{{frmRegister.value.frmDetails.isinstock}}</dd>
+    </dl>
+</div>

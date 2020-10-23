@@ -1,0 +1,27 @@
+<div class="container">
+    
+        <form #frmReg= "ngForm" (submit)="formSubmit(frmReg.value)">
+            <div class= "form-group">
+                <label>Name</label>
+                <input type="text" name="txtname" #txtname= 'ngModel' ngModel class= "form-control">
+            </div>
+            <div class= "form-group">
+                <label>Shipped To</label>
+                <select name="shippedTo"  #shippedTo='ngModel'ngModel class= "form-control">
+                    <option>Banglore</option>
+                    <option>Belgaum</option>
+                    <option>Hubli</option>
+                </select>
+            </div>
+
+            <h3>Details</h3>
+            <dl>
+                <dt>Name:</dt>
+                <dd>{{txtname.value}}</dd>
+                <dt>Shipped to</dt>
+                <dd>{{shippedTo.value}}</dd>
+            </dl>
+            <button class= "btn btn-primary">Submit</button>
+        </form>
+   
+</div>

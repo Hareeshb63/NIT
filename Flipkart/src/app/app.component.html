@@ -1,0 +1,29 @@
+<style>
+
+</style>
+<div class=container>
+  <h1 style="color:blue">Flipkart | India</h1>
+  <div class="btn-toolbar bg-success  justify-content-between">
+    <div class="btn-group">
+      <a routerLink="home" class="btn btn-success">Home</a>
+      <a routerLink="electronics" class="btn btn-success">Electronics</a>  
+      <a routerLink="fashions" class="btn btn-success">Fashions</a>
+      <a routerLink="footware" class="btn btn-success">Footware</a>
+      <a routerLink="categories" class="btn btn-success">Categories</a>
+      
+    </div>
+    <div>
+      <a routerLink="pdfnav" class="btn btn-success">Program Design</a>
+      <a routerLink="search/fashion" class="btn btn-success">Search</a>
+      <a routerLink="excel" class="btn btn-success">Expo Excel</a>
+      <a routerLink="pdfmake" class="btn btn-success">PdfMake</a>
+    </div>
+  </div>
+  <section style="height: 500px;">
+    <router-outlet> </router-outlet>
+  </section>
+
+  <div class= "bg-success text-white text-center" style="height: 40px;">
+          &copy;copyrights 2020
+  </div>
+</div>

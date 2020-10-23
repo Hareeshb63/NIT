@@ -1,0 +1,6 @@
+<div>
+    <h3>Category List</h3>
+    <ul *ngFor= 'let item of categories'>
+        <button (click)='catClick(item)' class="btn btn-link"><li>{{item.categoryName}}</li></button>
+    </ul>
+</div>

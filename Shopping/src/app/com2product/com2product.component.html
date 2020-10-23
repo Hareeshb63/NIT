@@ -1,0 +1,30 @@
+<div class= "container">
+    <app-com2filter [allCount]='pAll' [electronicsCount]='pElectronics' [shoesCount]='pShoes' 
+    [clothsCount]='pCloths' (filterEvent)='bind($event)'> </app-com2filter>
+    <fieldset>
+        <legend>Product List</legend>
+        <table class= "table table-hover">
+            <thead>
+                <th>NAME</th>
+                <th>PRICE</th>
+                <th>CATEGORY</th>
+            </thead>
+            <tbody>
+                <ng-container *ngFor='let item of data'>
+                    <tr *ngIf ="selectCat=='All'|| selectCat==item.category ">
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.category}}</td>
+                    </tr>
+                </ng-container>
+            </tbody>
+        </table>
+    </fieldset>
+    
+    <div>
+        <button (click)='byPrice()'>SortBy Price</button>
+        <button (click)='byName()'>SortBy Name</button>
+        <label> Search Box:</label>
+        <input type="text" [(ngModel)]='searchedText' (keyup)="searchText()">
+    </div>
+</div>

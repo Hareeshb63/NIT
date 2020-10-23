@@ -1,0 +1,62 @@
+<div class= "container-fluid">
+    <h3>Shopping</h3>
+    <div class= "cart">
+        <div class= "form-group">
+            <label> Select Category</label>
+            <select (change)= 'selectedCategoryChange()' [(ngModel)]= 'selectedCatrgory' class= "form-control">
+                <option *ngFor='let item of category'> {{item}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label> Select Product</label>
+            <select (change)='selectedProductChange()' [(ngModel)]='selectedProduct' class= "form-control">
+                <option *ngFor='let item of product'>{{item}}</option>
+            </select>
+        </div>
+    
+        <div class= "form-group">
+            <div class= "card text-center">
+                <div class= "card-body">
+                <img [src]="photo" width='150' height="150" >
+                </div>
+                <div class= "card-footer">
+
+                    <h4>{{price}}</h4>
+                </div>
+                    <button (click)="AddToCardClick()" class= "btn btn-primary"> Add to cart</button>
+                </div>
+         </div>
+                <!-- Cart -->
+    </div>
+   <div *ngIf='click==true'>
+    
+        <div class= "cart" style="position:fixed;left:450px;width:400px">
+            <h3>Cart Item</h3>
+            <table class= "table table-hover">
+                <thead>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Preview</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor= 'let item of cartItems;let i=index'>
+                        <td>{{item.name}}</td>
+                        <td>{{item.price}}</td>
+                        <td><img [src]="item.photo" width="20" height="20"></td>
+                        <td><button (click)= 'deleteClick(i)' class= "btn btn-danger">X</button></td>
+                    </tr>
+                </tbody>
+               </table>
+               <h5>Total Amount:&#8377; {{total}}</h5>
+        </div>
+    </div>
+   
+         <div class= "catlog">
+            <button (click)='cartClick()'> <img src="assets/cart.png" width=30 height="30"></button>
+            <div>({{cartItems.length}})</div>
+        </div>
+          
+
+     
+    
+</div>
